@@ -16,15 +16,13 @@ jobs:
 
       # 환경 변수 파일 생성
       - name: Generate .env file
-        run: |
-          echo "$DEV_ENV_FILE" >> .env
+        run: echo "$DEV_ENV_FILE" >> .env
         env:
           DEV_ENV_FILE: ${{ secrets.DEV_ENV_FILE }}
 
       # docker-compose로 컨테이너 띄우기
       - name: Up containers
-        run: |
-        docker-compose up -d --build nginx
+        run: docker-compose up -d --build nginx
 
       # NodeJS 18 버전 사용
       - name: Install node
