@@ -36,5 +36,4 @@ lerna-debug.log*
 
 # Custom
 *.pem
-package-lock.json
 .env
