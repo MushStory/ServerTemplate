@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  nginx:
+    image: nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d/
+  blue:
+    image: y37653/server-template:latest
+    container_name: blue
+    restart: always
+    env_file:
+      - ./.env
+    expose:
+      - 3000
+  green:
+    image: y37653/server-template:latest
+    container_name: green
+    restart: always
+    env_file:
+      - ./.env
+    expose:
+      - 3000

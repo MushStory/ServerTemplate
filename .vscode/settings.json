@@ -1,0 +1,21 @@
+{
+  "todohighlight.keywords": [
+    {
+      "text": "TODO",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "skyblue"
+    }
+  ],
+  "files.exclude": {
+    ".prettierrc": true,
+    "nest-cli.json": true,
+    "tsconfig.build.json": true,
+    "tsconfig.json": true,
+    "*.pem": true
+  },
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workspace.isHidden": true
+}
