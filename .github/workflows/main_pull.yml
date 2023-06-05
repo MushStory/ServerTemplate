@@ -16,15 +16,13 @@ jobs:
 
       # 환경 변수 파일 생성
       - name: Generate .env file
-        run: |
-          echo "$PROD_ENV_FILE" >> .env
+        run: echo "$PROD_ENV_FILE" >> .env
         env:
           PROD_ENV_FILE: ${{ secrets.PROD_ENV_FILE }}
 
       # docker-compose로 컨테이너 띄우기
       - name: Up containers
-        run: |
-        docker-compose up -d --build nginx
+        run: docker-compose up -d --build nginx
 
       # NodeJS 18 버전 사용
       - name: Install node
@@ -40,8 +38,8 @@ jobs:
       # 테스트 수행
       - name: Run tests
         run: |
-        npm test
-        npm run test:e2e
+          npm test
+          npm run test:e2e
 
       # 컨테이너 종료
       - name: Down containers
